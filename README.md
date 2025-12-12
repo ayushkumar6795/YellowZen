@@ -255,7 +255,7 @@ The site follows WCAG AA guidelines:
 ## 🤝 Contributing
 
 This is a personal project, but suggestions are welcome! Contact via:
-- Email: hello@yellowzen.com
+- Email: 
 - GitHub: Issues and PRs welcome
 
 ## 🙏 Credits
@@ -268,3 +268,4 @@ This is a personal project, but suggestions are welcome! Contact via:
 ---
 
 Built with ❤️ and ☕ by YellowZen
+
