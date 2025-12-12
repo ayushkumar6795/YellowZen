@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="YellowZen Tools - Financial modeling and data analysis tools.">
+    <title>Tools — YellowZen</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <img src="images/yellowzen_logo_1765480553414.png" alt="YellowZen Logo" width="40" height="40"
+                    style="border-radius: 50%;">
+                <span>YellowZen</span>
+            </a>
+            <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="navbar-menu" id="navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="tools.html" class="active">Tools</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main-content" style="margin-top: 80px;">
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-title">Tools & Dashboards</h1>
+                <p class="page-description">Interactive tools for financial modeling and data analysis.</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="container">
+                <div class="grid grid-2">
+                    <div class="card">
+                        <div class="resource-icon">📈</div>
+                        <h3>Monte Carlo Simulator</h3>
+                        <p>Run Monte Carlo simulations for portfolio optimization and risk assessment. Model thousands
+                            of scenarios to evaluate investment strategies.</p>
+                        <div class="badge" style="margin: var(--space-md) 0;">Coming Soon</div>
+                        <button class="btn btn-secondary btn-small"
+                            onclick="alert('This tool is under development. Sign up for the newsletter to be notified when it launches!')">Notify
+                            Me</button>
+                    </div>
+
+                    <div class="card">
+                        <div class="resource-icon">📊</div>
+                        <h3>Volatility Analyzer</h3>
+                        <p>Analyze option volatility surfaces, identify mispricing, and visualize volatility smiles and
+                            skews across strike prices and maturities.</p>
+                        <div class="badge" style="margin: var(--space-md) 0;">Coming Soon</div>
+                        <button class="btn btn-secondary btn-small"
+                            onclick="alert('This tool is under development. Sign up for the newsletter to be notified when it launches!')">Notify
+                            Me</button>
+                    </div>
+
+                    <div class="card">
+                        <div class="resource-icon">⚡</div>
+                        <h3>Options Pricer</h3>
+                        <p>Calculate option prices using Black-Scholes and other pricing models. Compute Greeks, analyze
+                            sensitivity, and compare theoretical vs market prices.</p>
+                        <div class="badge" style="margin: var(--space-md) 0;">Coming Soon</div>
+                        <button class="btn btn-secondary btn-small"
+                            onclick="alert('This tool is under development. Sign up for the newsletter to be notified when it launches!')">Notify
+                            Me</button>
+                    </div>
+
+                    <div class="card">
+                        <div class="resource-icon">📉</div>
+                        <h3>Correlation Matrix</h3>
+                        <p>Visualize correlation structures in financial data. Identify diversification opportunities
+                            and monitor correlation breakdowns during market stress.</p>
+                        <div class="badge" style="margin: var(--space-md) 0;">Coming Soon</div>
+                        <button class="btn btn-secondary btn-small"
+                            onclick="alert('This tool is under development. Sign up for the newsletter to be notified when it launches!')">Notify
+                            Me</button>
+                    </div>
+                </div>
+
+                <div class="newsletter-box" style="margin-top: var(--space-4xl);">
+                    <h2>Stay Updated</h2>
+                    <p>Be the first to know when new tools launch.</p>
+                    <button class="btn btn-primary" id="newsletter-btn-tools">Subscribe to Newsletter</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 YellowZen. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-backdrop" id="newsletter-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Subscribe to Newsletter</h3>
+                <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="margin-bottom: var(--space-lg); color: var(--color-text-secondary);">Get notified when new
+                    tools launch.</p>
+                <form id="newsletter-form">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" class="form-input" placeholder="you@example.com" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('newsletter-btn-tools')?.addEventListener('click', () => {
+            document.getElementById('newsletter-modal').classList.add('active');
+        });
+    </script>
+</body>
+
+</html>

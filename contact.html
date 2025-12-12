@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact YellowZen - Get in touch for collaboration and questions.">
+    <title>Contact — YellowZen</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <img src="images/yellowzen_logo_1765480553414.png" alt="YellowZen Logo" width="40" height="40"
+                    style="border-radius: 50%;">
+                <span>YellowZen</span>
+            </a>
+            <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="navbar-menu" id="navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main-content" style="margin-top: 80px;">
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-title">Let's Connect</h1>
+                <p class="page-description">Questions, collaboration, or just want to chat about finance and data?</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="container">
+                <div class="contact-container">
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <h3>📧 Email</h3>
+                            <a href="mailto:hello@yellowzen.com">hello@yellowzen.com</a>
+                            <p style="margin-top: var(--space-md); color: var(--color-text-muted);">Best for detailed
+                                inquiries and collaboration proposals.</p>
+                        </div>
+
+                        <div class="contact-method">
+                            <h3>💼 LinkedIn</h3>
+                            <a href="https://linkedin.com/in/yellowzen" target="_blank" rel="noopener">Connect on
+                                LinkedIn</a>
+                            <p style="margin-top: var(--space-md); color: var(--color-text-muted);">For professional
+                                networking and career opportunities.</p>
+                        </div>
+
+                        <div class="contact-method">
+                            <h3>💻 GitHub</h3>
+                            <a href="https://github.com/yellowzen" target="_blank" rel="noopener">Follow on GitHub</a>
+                            <p style="margin-top: var(--space-md); color: var(--color-text-muted);">Check out
+                                open-source projects and contributions.</p>
+                        </div>
+
+                        <div class="contact-method">
+                            <h3>📸 Instagram</h3>
+                            <a href="https://instagram.com/yellowzen" target="_blank" rel="noopener">@yellowzen</a>
+                            <p style="margin-top: var(--space-md); color: var(--color-text-muted);">Behind-the-scenes
+                                insights and data visualizations.</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="padding: var(--space-3xl); text-align: center;">
+                        <h2>Send a Message</h2>
+                        <p style="color: var(--color-text-secondary); margin-bottom: var(--space-xl);">Have a question
+                            or want to work together?</p>
+                        <form id="contact-form"
+                            onsubmit="event.preventDefault(); alert('Thank you for your message! This is a demo form. In production, this would send an email.');">
+                            <div class="form-group" style="text-align: left;">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" id="name" class="form-input" required>
+                            </div>
+                            <div class="form-group" style="text-align: left;">
+                                <label for="contact-email" class="form-label">Email</label>
+                                <input type="email" id="contact-email" class="form-input" required>
+                            </div>
+                            <div class="form-group" style="text-align: left;">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea id="message" class="form-textarea" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 YellowZen. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

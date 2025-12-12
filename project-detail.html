@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Project Details - YellowZen">
+    <title>Project Detail — YellowZen</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <img src="images/yellowzen_logo_1765480553414.png" alt="YellowZen Logo" width="40" height="40"
+                    style="border-radius: 50%;">
+                <span>YellowZen</span>
+            </a>
+            <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="navbar-menu" id="navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main-content" style="margin-top: 80px;">
+        <section class="section">
+            <div class="container">
+                <div class="project-content" id="project-detail">
+                    <!-- Content loaded by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 YellowZen. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/content.js"></script>
+    <script>
+        // Get project slug from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const slug = urlParams.get('slug');
+
+        // Find the project
+        const project = projects.find(p => p.slug === slug);
+
+        if (!project) {
+            document.getElementById('project-detail').innerHTML = '<p>Project not found.</p>';
+        } else {
+            document.title = `${project.title} — YellowZen`;
+
+            document.getElementById('project-detail').innerHTML = `
+        <div class="project-hero">
+          <img src="${project.image}" alt="${project.title}" class="project-hero-image">
+          <h1>${project.title}</h1>
+          <p style="font-size: var(--font-size-xl); color: var(--color-text-secondary); margin-bottom: var(--space-xl);">
+            ${project.description}
+          </p>
+          <div class="badge-group">
+            ${project.tags.map(tag => `<span class="badge">${tag}</span>`).join('')}
+          </div>
+        </div>
+        
+        <div class="project-meta">
+          <div class="project-meta-item">
+            <h4>Category</h4>
+            <p>${project.category}</p>
+          </div>
+          <div class="project-meta-item">
+            <h4>Tech Stack</h4>
+            <p>${project.techStack.join(', ')}</p>
+          </div>
+          <div class="project-meta-item">
+            <h4>Links</h4>
+            <div style="display: flex; gap: var(--space-sm);">
+              ${project.github ? `<a href="${project.github}" class="btn btn-small btn-secondary" target="_blank" rel="noopener">GitHub</a>` : ''}
+              ${project.demo ? `<a href="${project.demo}" class="btn btn-small btn-primary" target="_blank" rel="noopener">Live Demo</a>` : ''}
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-section">
+          <h3>Overview</h3>
+          <p>${project.content.overview}</p>
+        </div>
+        
+        <div class="project-section">
+          <h3>The Problem</h3>
+          <p>${project.content.problem}</p>
+        </div>
+        
+        <div class="project-section">
+          <h3>Approach</h3>
+          <p>${project.content.approach}</p>
+        </div>
+        
+        <div class="chart-container">
+          <h3 style="margin-bottom: var(--space-lg);">Sample Performance Metrics</h3>
+          <canvas id="project-chart"></canvas>
+        </div>
+        
+        <div class="project-section">
+          <h3>Results</h3>
+          <p>${project.content.results}</p>
+        </div>
+        
+        <div class="project-section">
+          <h3>What I Learned</h3>
+          <p>${project.content.learned}</p>
+        </div>
+        
+        <div style="text-align: center; margin-top: var(--space-4xl); padding: var(--space-3xl); background: var(--gradient-primary); border-radius: var(--radius-2xl);">
+          <h3>Interested in this project?</h3>
+          <p style="margin-bottom: var(--space-xl);">Check out the code on GitHub or get in touch to discuss collaboration.</p>
+          <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+            ${project.github ? `<a href="${project.github}" class="btn btn-primary" target="_blank" rel="noopener">View on GitHub</a>` : ''}
+            <a href="contact.html" class="btn btn-secondary">Contact Me</a>
+          </div>
+        </div>
+      `;
+
+            // Create a sample chart
+            const ctx = document.getElementById('project-chart');
+            if (ctx) {
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                        datasets: [{
+                            label: 'Performance',
+                            data: [65, 72, 68, 75, 80, 78, 85, 88, 92, 90, 95, 98],
+                            borderColor: '#FFD54A',
+                            backgroundColor: 'rgba(255, 213, 74, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                display: true,
+                                position: 'top'
+                            },
+                            title: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 100
+                            }
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
